@@ -1,3 +1,8 @@
 node_modules
+.idea
 config/keys.dev.js
+uploads
 client/etc
+client/node_modules
+client/dist
+client/.idea
