@@ -1,0 +1,30 @@
+<div class="filter ">
+  <div class="fr">
+    <div class="col order">
+      <div class="input-field inline order-position-input">
+        <input type="number" id="number" [(ngModel)]="order" min="1">
+        <label for="number">Номер заказа</label>
+      </div>
+    </div>
+    <div class="col filter-pickers">
+      <div class="input-field">
+        <input type="text"
+               #startRef
+                class="">
+        <label>Начало</label>
+      </div>
+
+      <div class="input-field">
+        <input type="text"
+               #endRef
+               class="">
+        <label>Конец</label>
+      </div>
+    </div>
+  </div>
+
+  <button
+    (click)="submitFilter()"
+    [disabled]="!isValid"
+    class="btn waves-effect wavers-light btn-small">Применить фильтр</button>
+</div>
