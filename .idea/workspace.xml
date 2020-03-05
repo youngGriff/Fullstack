@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fec1b338-f064-41fa-a38c-1a28fd7f666f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="fec1b338-f064-41fa-a38c-1a28fd7f666f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/client/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -301,12 +299,12 @@
       <workItem from="1563351792185" duration="2205000" />
       <workItem from="1563366574987" duration="13825000" />
       <workItem from="1563471529971" duration="4802000" />
-      <workItem from="1563522431465" duration="737000" />
+      <workItem from="1563522431465" duration="1567000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151919000" />
+    <option name="totallyTimeSpent" value="152749000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -319,7 +317,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49264705" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
