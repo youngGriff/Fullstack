@@ -4,8 +4,10 @@ import {Subject, Subscription} from "rxjs";
 import {filter, takeUntil} from "rxjs/operators";
 import {MaterialInstance, MaterialService} from "../shared/classes/material.service";
 import {OrderService} from "./order.service";
-import {Order, OrderPosition} from "../shared/interfaces";
+import {Category, Order, OrderPosition} from "../shared/interfaces";
 import {OrdersService} from "../shared/services/orders.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {CategoriesService} from "../shared/services/categories.service";
 
 @Component({
   selector: 'app-order-page',
@@ -18,15 +20,18 @@ export class OrderPageComponent implements OnInit, OnDestroy, AfterViewInit {
   isRoot: boolean = true;
   destroy$ = new Subject<boolean>();
   oSub?: Subscription;
-
-  @ViewChild('modal') modalRef: ElementRef;
   model: MaterialInstance;
 
+  @ViewChild('modal') modalRef: ElementRef;
+
   loading = false;
+  category: Category;
 
   constructor(private router: Router,
               private ordersService: OrdersService,
+              private categoriesService: CategoriesService,
               public orderService: OrderService) {
+
   }
 
   ngOnInit() {
@@ -84,5 +89,10 @@ export class OrderPageComponent implements OnInit, OnDestroy, AfterViewInit {
       this.oSub.unsubscribe();
     }
     this.model.destroy();
+
   }
+
+
+
+
 }

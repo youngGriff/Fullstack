@@ -6,7 +6,7 @@ module.exports.overview = async function (req, res) {
         const allOrders = await Order.find({user: req.user.id}).sort({date: 1});
         const ordersMap = getOrdersMap(allOrders);
         const yesterdayOrders = ordersMap[moment().add(-1, 'd').format('DD.MM.YYYY')] || [];
-
+        console.log(allOrders);
         // Количество заказов вчера
         const yesterdayOrdersNumber = yesterdayOrders.length;
         // Количество заказов
@@ -58,7 +58,6 @@ module.exports.analytics = async function (req, res) {
         const average = +(calculatePrice(allOrders) / Object.keys(ordersMap).length).toFixed(2);
 
         const chart = Object.keys(ordersMap).map(label => {
-            // label == 05.05.2018
             const gain = calculatePrice(ordersMap[label]);
             const order = ordersMap[label].length;
 
@@ -86,7 +85,7 @@ function calculatePrice(orders = []) {
 function getOrdersMap(orders = []) {
     const daysOrders = {}
     orders.forEach(order => {
-        const date = moment(order.date).format('DD.MM.YYYY')
+        const date = moment(order.date).format('DD.MM.YYYY');
 
         if (date === moment().format('DD.MM.YYYY')) {
             return
