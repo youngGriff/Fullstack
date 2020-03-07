@@ -54,6 +54,8 @@ export class OrderCategoriesComponent implements OnInit, AfterViewInit, OnDestro
       this.categoriesService.deleteCategory(category)
         .subscribe(()=>{
           this.categories = this.categories.filter((e)=>e._id !== category._id)
+        }, (error)=>{
+          MaterialService.toast(error.message);
         })
     }
   }

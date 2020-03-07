@@ -57,7 +57,7 @@ export class InnerCategoryFormComponent implements OnInit, OnChanges  {
         this.form.enable();
         this.form.reset();
 
-        MaterialService.toast(error.error.message);
+        MaterialService.toast(error.message);
       }
     );
   }

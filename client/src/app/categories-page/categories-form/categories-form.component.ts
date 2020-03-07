@@ -72,6 +72,6 @@ export class CategoriesFormComponent implements OnInit {
   }
 
 
-  onCategotySubmit() {
+  onCategorySubmit() {
   }
 }

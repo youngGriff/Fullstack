@@ -11,6 +11,6 @@
           </span>
 </div>
 
-<app-inner-category-form [category]="category" (onSend)="onCategotySubmit()" [isNew]="isNew"></app-inner-category-form>
+<app-inner-category-form [category]="category" (onSend)="onCategorySubmit()" [isNew]="isNew"></app-inner-category-form>
 
 <app-positions-form *ngIf="category?._id" [categoryId]="category._id"></app-positions-form>

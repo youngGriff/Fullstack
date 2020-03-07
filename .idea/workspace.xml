@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fec1b338-f064-41fa-a38c-1a28fd7f666f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/app/categories-page/categories-form/inner-category-form/inner-category-form.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/categories-page/categories-form/inner-category-form/inner-category-form.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/categories-page/categories-form/inner-category-form/inner-category-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/categories-page/categories-form/categories-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/categories-page/categories-form/categories-form.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/categories-page/categories-form/categories-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/categories-page/categories-form/categories-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/order-page/order-categories/order-categories.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/order-page/order-categories/order-categories.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/order-page/order-categories/order-categories.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/order-page/order-categories/order-categories.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/categories-page/categories-form/inner-category-form/inner-category-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/categories-page/categories-form/inner-category-form/inner-category-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/order-page/order-categories/order-categories.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/order-page/order-categories/order-categories.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +126,7 @@
       <workItem from="1563471529971" duration="4802000" />
       <workItem from="1563522431465" duration="1567000" />
       <workItem from="1583514968631" duration="8164000" />
-      <workItem from="1583574028566" duration="6564000" />
+      <workItem from="1583574028566" duration="6943000" />
     </task>
     <servers />
   </component>
