@@ -22,6 +22,7 @@ import { OrderCategoriesComponent } from './order-page/order-categories/order-ca
 import { OrderPositionsComponent } from './order-page/order-positions/order-positions.component';
 import { HistoryListComponent } from './history-page/history-list/history-list.component';
 import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
+import { InnerCategoryFormComponent } from './categories-page/categories-form/inner-category-form/inner-category-form.component';
 
 
 
@@ -44,6 +45,7 @@ import { HistoryFilterComponent } from './history-page/history-filter/history-fi
     OrderPositionsComponent,
     HistoryListComponent,
     HistoryFilterComponent,
+    InnerCategoryFormComponent,
   ],
   imports: [
     BrowserModule,

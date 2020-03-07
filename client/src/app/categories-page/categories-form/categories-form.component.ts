@@ -13,14 +13,10 @@ import {Category, Message} from "../../shared/interfaces";
   styleUrls: ['./categories-form.component.css']
 })
 export class CategoriesFormComponent implements OnInit {
-
-  @ViewChild('input') inputRef: ElementRef;
-
-  image: File;
   isNew = true;
-  form: FormGroup;
-  imagePreview: string | ArrayBuffer = '';
-  category: Category;
+   category: Category;
+
+
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -28,11 +24,7 @@ export class CategoriesFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.form = new FormGroup({
-      name: new FormControl(null, [Validators.required]),
 
-    });
-    this.form.disable();
     this.route.params
       .pipe(
         switchMap((params: Params) => {
@@ -46,31 +38,21 @@ export class CategoriesFormComponent implements OnInit {
       ).subscribe((category: Category) => {
         if (category) {
           this.category = category;
-          this.form.patchValue({name: category.name});
-          this.imagePreview = category.imageSrc;
           MaterialService.updateTextInputs();
         }
-        this.form.enable();
-
+        else{
+          this.category = null;
+        }
+        this.isNew = !this.category;
       },
       error => {
         MaterialService.toast(error.error.message);
       })
   }
 
-  triggerClick() {
-    this.inputRef.nativeElement.click();
-  }
 
-  onFileUpload($event) {
-    const file = $event.target.files[0];
-    this.image = file;
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.imagePreview = reader.result;
-    };
-    reader.readAsDataURL(this.image);
-  }
+
+
 
   deleteCategory() {
     const desition = window.confirm(`Уверены, что хотите удалить категориию ${this.category.name}`);
@@ -89,22 +71,7 @@ export class CategoriesFormComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    this.form.disable();
-    let obs$;
-    if (this.isNew) {
-      obs$ = this.categoriesService.create(this.form.value.name, this.image);
-    } else {
-      obs$ = this.categoriesService.update(this.category._id, this.form.value.name, this.image)
-    }
-    obs$.subscribe((category) => {
-        this.form.enable();
-        MaterialService.toast('Изменения сохранены');
-      },
-      error => {
-        this.form.enable();
-        MaterialService.toast(error.error.message);
-      }
-    );
+
+  onCategotySubmit() {
   }
 }

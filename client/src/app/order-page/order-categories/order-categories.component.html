@@ -1,8 +1,10 @@
 <div *ngIf="!isLoading; else loader " class="">
+  <button  class="btn waves-effect grey darken-1"  (click)="onAddCategory()">Добавить категорию</button>
+
   <div *ngIf="categories.length > 0; else empty" class="frow order-row">
     <div *ngFor="let category of categories"
          [routerLink]="['/order', category._id]"
-         class="card waves-effect pointer">
+         class="card category waves-effect pointer">
       <div class="center">
         <img [src]="category.imageSrc"
              class="responsive-img order-img">
@@ -11,7 +13,7 @@
 
         <h5 class="m0">{{category.name}}</h5>
       </div>
-      <div><button (click)="$event.stopPropagation();onDelete(category);">Удалить</button> <button (click)="$event.stopPropagation(); onUpdate(category)">Обновить</button></div>
+      <div class="category__buttons"><button class="waves-effect waves-light btn" (click)="$event.stopPropagation();onDelete(category);">Удалить</button> <button class="waves-effect waves-light btn" (click)="$event.stopPropagation(); onUpdate(category)">Обновить</button></div>
 
     </div>
   </div>
@@ -24,50 +26,9 @@
 <ng-template #loader>
   <app-loader></app-loader>
 </ng-template>
-<button  class="btn waves-effect grey darken-1"  (click)="onAddCategory()">Добавить категорию</button>
 
 <div #categoryModal class="modal modal-fixed-footer">
   <div class="modal-content">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="col s12 l6">
-      <h4>{{isNew? "Добавить":"Обновить"}} категорию</h4>
-      <div class="input-field">
-        <input id="name"
-               formControlName="name"
-               [ngClass]="{'invalid': form.get('name').invalid
-             && form.get('name').touched}"
-
-               type="text">
-        <label for="name">Название</label>
-        <span class="helper-text red-text" *ngIf="form.get('name').invalid
-             && form.get('name').touched">
-        <span *ngIf="form.get('name').errors['required']">
-          Имя категории не може быть пустым.
-        </span>
-      </span>
-      </div>
-
-      <div>
-        <input #input class="dn"
-               (change)="onFileUpload($event)"
-               type="file">
-        <button (click)="triggerClick()"
-                [disabled]="form.disabled"
-                type="button" class="waves-effect waves-light btn orange lighten-2 mb2">
-          <i class="material-icons left">backup</i>
-          Загрузить изображение
-        </button>
-      </div>
-      <img class="responsive-img h200"
-           *ngIf="imagePreview"
-           [src]="imagePreview">
-      <div>
-        <button type="submit"
-                [disabled]="form.invalid || form.disabled"
-                class="waves-effect waves-light btn">
-          Сохранить изменения
-        </button>
-      </div>
-    </form>
-
+    <app-inner-category-form [category]="category" (onSend)="onCategorySaved($event)" [isNew]="isNew"></app-inner-category-form>
   </div>
 </div>

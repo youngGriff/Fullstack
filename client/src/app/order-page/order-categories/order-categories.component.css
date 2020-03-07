@@ -1,0 +1,9 @@
+.category__buttons{
+  margin-top: auto;
+
+}
+.category{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
